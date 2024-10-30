@@ -1,0 +1,439 @@
+body {
+
+    margin: 0;
+
+    background-color: rgba(255, 248, 231, 1);
+
+}
+
+
+
+
+
+/* Shared IDs: Start */
+
+
+
+#Navigation {
+
+    background-color: rgba(93, 64, 55, 75%);
+
+    overflow: hidden;
+
+}
+
+
+
+#Navigation a {
+
+    float: right;
+
+    display: block;
+
+    color: rgba(255, 248, 231, 1);
+
+    text-align: center;
+
+    padding: 16px;
+
+    text-decoration: none;
+
+    animation: fadeIn 1s;
+
+}
+
+
+
+#Navigation a:hover {
+
+    background-color: rgba(255, 248, 231, 1);
+
+    color: rgba(93, 64, 55, 1);
+
+}
+
+
+
+#Navigation p {
+
+    float: left;
+
+    padding-left: 2%;
+
+    color: rgba(255, 248, 231, 1);
+
+    text-transform: uppercase;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 16;
+
+}
+
+
+
+#Contents {
+
+    position: relative;
+
+    top: 0%;
+
+    left: 0%;
+
+    margin: 5%;
+
+    color: rgba(93, 64, 55, 1);
+
+    animation: fadeIn 3s;
+
+}
+
+
+
+#Contents hr {
+
+    height: 1px;
+
+    background-color: rgba(93, 64, 55, 1);
+
+    border: none;
+
+}
+
+
+
+#Title {
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    font-size: 250%;
+
+}
+
+
+
+#Descript{
+
+    margin-left :10%;
+
+    margin-right :10%;
+
+    text-align: justify;
+
+}
+
+#Descript h4{
+
+    text-align: center;
+
+}
+
+#Descript pre{
+
+    text-align: right;
+
+}
+
+
+
+
+
+/* Home: Start */
+
+
+
+#MainTitle {
+
+    /* text */
+
+    font-family: sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    color: rgb(93, 64, 55, 1);
+
+    /* Position */
+
+    position: absolute;
+
+    top: 40%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    /* fun stuff */
+
+    animation: enter 2s;
+
+}
+
+
+
+#MainTitle p {
+
+    /* text */
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    text-transform: none;
+
+}
+
+
+
+#HomeButton a {
+
+    /* color */
+
+    background-color: rgba(93, 64, 55, 1);
+
+    color: rgba(255, 248, 231, 1);
+
+    outline: rgba(93, 64, 55, 1);
+
+    /* position */
+
+    position: absolute;
+
+    top: 60%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    /* Shape */
+
+    padding: 25px;
+
+    border-radius: 50px;
+
+    /* Text */
+
+    text-decoration: none;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    font-weight: 600;
+
+    font-size: 20px;
+
+    /* etc */
+
+    animation: enter 3s;
+
+    transition-property: background, outline, color;
+
+    transition-duration: 0.2s;
+
+    transition-timing-function: ease-in-out;
+
+}
+
+
+
+#HomeButton a:hover {
+
+    background-color: rgba(255, 248, 231, 1);
+
+    color: rgba(93, 64, 55, 1);
+
+    outline: 10px double;
+
+}
+
+
+
+
+
+/* Home: End */
+
+
+
+
+
+/* Library: Start */
+
+
+
+#Shelf {
+
+    position: relative;
+
+    top: 0%;
+
+    left: 0%;
+
+    float: left;
+
+    display: block;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+}
+
+
+
+#Book {
+
+    position: relative;
+
+    top: 0%;
+
+    left: 0%;
+
+    display: block;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    text-align: center;
+
+}
+
+
+
+#Book img {
+
+    border-radius: 25px;
+
+    border: 15px double rgba(93, 64, 55, 1);
+
+    outline-style: dashed;
+
+}
+
+
+
+#Book a {
+
+    float: left;
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    color: rgba(93, 64, 55, 1);
+
+}
+
+
+
+#Book p {
+
+    margin-top: 10px;
+
+    top: 0%;
+
+    left: 0%;
+
+}
+
+#Book :hover{
+
+        background-color: rgba(93, 64, 55, .25);
+
+        border-radius: 25px;
+
+}
+
+/* Library: End */
+
+
+
+/* Book Contents: Start */
+
+#BTitle{
+
+    text-align: center;
+
+}
+
+#BTitle img{
+
+    border: 10px double rgba(93, 64, 55, 1);
+
+    outline: 10px double rgba(93, 64, 55, 1);
+
+}
+
+#Chapter{
+
+    text-align: justify;
+
+}
+
+#Chapter h2{
+
+    text-align: center;
+
+    color:rgba(93, 64, 55, 1);
+
+    text-decoration-color: rgba(93, 64, 55, 1);
+
+}
+
+/* Book Contents: End */
+
+
+
+/* Fun Stuff: Start */
+
+
+
+@keyframes enter {
+
+    0% {
+
+        opacity: 0%;
+
+        position: absolute;
+
+        top: -10%;
+
+    }
+
+    100% {
+
+        opacity: 100%;
+
+    }
+
+}
+
+
+
+@keyframes fadeIn {
+
+    0% {
+
+        opacity: 0%;
+
+    }
+
+    100% {
+
+        opacity: 100%;
+
+    }
+
+}
+
+
+
+/* Fun Stuff: End*/
