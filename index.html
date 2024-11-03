@@ -14,13 +14,25 @@
 
     <style>
         body {
-            margin: 0;
+            margin: auto;
             padding: 5vh;
             background-color:rgb(44, 44, 44);
             font-family: "Jersey 10", serif;
             font-weight: 400;
             font-style: normal;
             color: rgb(219, 219, 219);
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 2vh;
+                font-size: 14px; /* Smaller font size for mobile */
+            }
+            #Title {
+                font-size: 40px; /* Adjust title size */
+            }
+            #Header {
+                font-size: 24px; /* Adjust header size */
+            }
         }
         #Title{
             font-size: 50px;
@@ -31,17 +43,20 @@
             text-align: left;
         }
         #Snippet {
+            display: block;
             border: 5px solid rgb(219, 219, 219);
             border-radius: 10px;
+
             height: fit-content;
-            width: 100%;
+            width: -webkit-fill-available;
         }
         #Preview {
+            display: block;
             border: 5px solid rgb(219, 219, 219);
             border-radius: 10px;
             image-rendering: crisp-edges;
-            height: max-content;
-            width: 100%;
+            height: fit-content;
+            width: -webkit-fill-available;
         }
     </style>
 </head>
@@ -49,8 +64,7 @@
     <h1><p id="Title">Fun Archive</p></h1>
     <hr>
     <p id="Header">Snippets</p> <!-- Snippets -->
-    <embed id="Snippet" src="HTML/SNIPPETS/RandomQuoteGenerator.html" type="text/html">
-
+    <iframe id="Snippet" src="HTML/SNIPPETS/RandomQuoteGenerator.html" type="text/html"></iframe>
     <p id="Header">Projects</p>    <!-- Projects -->
     <a href="HTML/PROJECTS/Novelette/Novelette.html"><img id="Preview" src="IMAGES/PREVIEW/Novelette.png" alt="Novelette"></a>
 </body>
