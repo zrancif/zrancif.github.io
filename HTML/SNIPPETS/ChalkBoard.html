@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Margarine&display=swap" rel="stylesheet">
+
+    <title>Post it: A Mini Todo List Program</title>
+    <!-- Style -->
+    <style>
+        body {
+            background-image: url('https://t4.ftcdn.net/jpg/02/85/77/63/240_F_285776347_Bbd3JlSgtsvWioH3m1SYXVf8QB7fmSbn.jpg');
+            background-size: cover; /* Ensures the image covers the whole screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents repeating the image */
+        }
+        .frame {
+        background-color: #8b5a2b; /* Wood color */
+        padding: 20px; /* Space for the frame */
+        border: 10px solid #6f3b1d; /* Darker border for the wood */
+        border-radius: 10px; /* Optional: rounded corners */
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3),  /* Inner shadow for texture */
+                    0 0 20px rgba(0, 0, 0, 0.2); /* Outer shadow for depth */
+        }
+        .chalkboard {
+        background-color: #4a6f41;
+        color: rgb(227, 227, 227);
+        font-family: "Margarine", sans-serif, system-ui;
+        font-weight: 400;
+        font-style: normal;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: justify;
+
+        width: calc(100% -20px);
+        font-size: 14px;
+        }
+        #PostQuery{
+        background-color: #4a6f41;
+        text-decoration: underline;
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        resize: none;
+        }
+        #PostQuery::placeholder{
+        color: #ddd;
+        }
+        #PostQuery:focus {
+        outline: none; /* Removes the default outline/border when focused */
+        border: none; /* Optional: If you also want to remove the default border */
+        }
+        button {
+            background-color: #6f3b1d;
+            border: #6f3b1d solid ;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #8b5a2b;
+            border: double #6f3b1d;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="chalkboard">
+            <h2 id="Reminder"></h2>
+            <textarea id="PostQuery" rows="3" cols="40" placeholder="Give yourself a note :> "></textarea>
+        </div>
+    </div>
+        <button onclick="PostNote()">Write</button>
+        <button onclick="YeetNote()">Erase</button>
+
+        <!-- Script -->
+        <script>
+            const postQuery = document.getElementById('PostQuery');
+            const reminder = document.getElementById('Reminder');
+
+            reminder.innerHTML = formatText(localStorage.getItem('note'));
+
+            function PostNote(){
+                if (BlankCheck(postQuery.value)){
+                    localStorage.setItem('note',postQuery.value);
+                    reminder.innerHTML = formatText(postQuery.value);
+                    postQuery.value = "";
+                }
+                else{
+                    postQuery.value = "";
+                }
+                console.log("Note Posted");
+            }
+            function YeetNote(){
+                reminder.innerHTML = "";
+                localStorage.removeItem('note');
+            }
+            function BlankCheck(input) {
+                return input.trim() !== '';
+            }
+            function formatText(text) {
+                if (!text) return '';
+                return text.replace(/\n/g, '<br>');
+            }
+        </script>
+</body>
+</html>
