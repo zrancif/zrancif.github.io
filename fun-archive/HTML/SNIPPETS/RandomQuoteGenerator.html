@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+     <style>
+        body {
+            background-color: rgb(171, 157, 133);
+            overflow: hidden;
+            margin: auto;
+            border:  2px dashed rgb(67, 59, 46); }
+        #quoteGenerator {
+            margin: 5px;
+            /* animation: ease-in-out 3s  */
+            transition-property: border;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+            position: relative;
+            padding: 5px;
+            background-color: rgb(113, 102, 82);
+            color: rgb(255, 245, 229);
+            border: 2px solid rgb(67, 59, 46);
+            border-radius: 5cm;
+            z-index: 1; }
+        #quoteGenerator:hover {
+            transition: border 0.1s ease-in-out;
+            
+            border: 5px double rgb(67, 59, 46);
+            padding: 5px;
+        }
+        #quoteBox {
+
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out; }
+
+        #text {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+    </style>
+
+    <!-- JS -->
+    <script>
+        const quotesDB = ["Error: Line 56","If something is possible, carry on as planned. Even if it isn’t possible, do it anyway.","The past you’ve lost will never come back. I myself have made so many mistakes… But we can learn from the past so we don’t repeat it.","Backup plans are the cornerstone of confidence.","To a young person for whom everything comes easily, the pain of defeat can be a much needed wake up call.", "Whatever you kids decide, think it through first. Feelings are difficult to kill, but they’re a lot harder to ressurect.","It’s all fun and games until things get real.","When people make a mistake, it is nice to give them advice, but… if they don’t listen, just leave them alone. Otherwise you’ll do yourself a disservice by wasting your time and effort.","Life is short so it will be appreciated. We live to our fullest due to that.", "People’s feelings sometimes go astray and lead to irreversible consequences.","There’s no such thing as a perfect person in this world.", "Give advice and good guidance, then halt if such is of no avail. Do not disgrace yourself for it.", "You will not be punished for your anger, instead you will be punished by your anger.", "trauma is like the mosquito in your bedroom, it never goes away"];
+
+        function generateQuote(){
+            
+            // console.log("button was clicked");
+            let min = 1;
+            let max = quotesDB.length - 1 ;
+            let coord = Math.floor(Math.random() * (max - min + 1)) + min;
+            let quoteBox = document.getElementById("quoteBox");
+
+            let quote = document.getElementById("text");
+            quote.style.opacity = '0';
+            
+            // quoteBox.textContent = " \" " + quotesDB[coord] + " \"";
+            quoteBox.style.display = 'block';
+            
+            quoteBox.style.fontFamily = '"Caveat", cursive';
+            quoteBox.style.fontOpticalSizing = 'auto';
+            quoteBox.style.fontSize = '125%' ;
+            quoteBox.style.fontWeight = '300';
+            quoteBox.style.fontStyle = 'normal';
+        
+            quoteBox.style.margin = '5px';
+            quoteBox.style.padding = '20px';
+            quoteBox.style.position = 'relative';
+            quoteBox.style.top = '-30px';   
+            quoteBox.style.border = '2px dashed rgb(119, 103, 75)';
+            quoteBox.style.backgroundColor = 'rgb(248, 242, 231)'; 
+
+            
+            setTimeout(() => {
+                quote.textContent = " \" " + quotesDB[coord] + " \"";
+                quote.style.opacity = '1'; // Fade back in
+                
+                }, 1000);
+
+            
+        }
+    </script>
+
+    <title>Random Quote Generator</title>
+</head>
+<body>
+        <div class="container"></div>
+        <button id="quoteGenerator" onclick="generateQuote()" >Generate Quote</button>
+        <p id="quoteBox"><span id="text" ></span></p>
+</body>
+</html>

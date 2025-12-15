@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    
+    <title>Fun Archive</title>
+    
+    <link rel="icon" href="IMAGES/ICON/icon.gif" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/ICON/icon.gif" type="image/x-icon">
+
+    <style>
+        body {
+            margin: auto;
+            padding: 5vh;
+            background-color:rgb(44, 44, 44);
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(219, 219, 219);
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 2vh;
+                font-size: 14px; 
+            }
+            #Title {
+                font-size: 40px;
+            }
+            #Header {
+                font-size: 24px;
+            }
+        }
+        #Title{
+            font-size: 50px;
+            text-align: center;
+        }
+        #Header {
+            font-size: 30px;
+            text-align: left;
+        }
+        #Snippet {
+            display: block;
+            border: 5px solid rgb(219, 219, 219);
+            border-radius: 10px;
+
+            height: fit-content;
+            width: -webkit-fill-available;
+        }
+        #Preview {
+            display: block;
+            border: 5px solid rgb(219, 219, 219);
+            border-radius: 10px;
+            image-rendering: crisp-edges;
+            height: fit-content;
+            width: -webkit-fill-available;
+        }
+    </style>
+</head>
+<body>
+    <h1><p id="Title">Fun Archive</p></h1>
+    <hr>
+    <p id="Header">Snippets</p> <!-- Snippets -->
+    <iframe id="Snippet" src="HTML/SNIPPETS/RandomQuoteGenerator.html" type="text/html"></iframe> <p></p>
+    <iframe id="Snippet" src="HTML/SNIPPETS/ChalkBoard.html" type="text/html" style="height: 50%;" ></iframe>
+    <iframe id="Snippet" src="HTML/SNIPPETS/Perceptron.html" type="text/html" style="height: 50%;" ></iframe>
+    <p id="Header">Projects</p>    <!-- Projects -->
+    <a href="HTML/PROJECTS/Novelette/Novelette.html"><img id="Preview" src="IMAGES/PREVIEW/Novelette.png" alt="Novelette"></a>
+</body>
+</html>

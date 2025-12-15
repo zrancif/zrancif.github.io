@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Will I Eat That Ice Cream?</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            h1 {
+                color: #4CAF50;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1.2em;
+                text-align: center;
+                margin: 10px;
+            }
+
+            hr {
+                width: 80%;
+                margin: 20px auto;
+            }
+
+            .question {
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+
+            .options {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+
+            #Submit {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1.2em;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+
+            #Submit:hover {
+                background-color: #45a049;
+            }
+
+            #demo {
+                font-size: 2em;
+                font-weight: bold;
+                margin-top: 20px;
+                text-align: center;
+                color: #333;
+            }
+        </style>
+        <script>
+            function IceCream() {
+                const threshold = 0.5;
+                const weights = [0.4, 0.5, 1.1, 0.6, -0.1];
+                var inputs = [document.querySelector('input[name="vanilla"]:checked').value,
+                              document.querySelector('input[name="chocolate"]:checked').value,
+                              document.querySelector('input[name="CookiesNCream"]:checked').value, 
+                              document.querySelector('input[name="Flavour"]:checked').value,
+                              document.querySelector('input[name="Peanuts"]:checked').value];
+            
+                let sum = 0;
+                for (let i = 0; i < inputs.length; i++) {
+                  sum += inputs[i] * weights[i];
+                }
+                console.log("Sum: " + sum);
+            
+                if (sum >= threshold){
+                    document.getElementById("demo").innerHTML = "Yes";  
+                }
+                else if (sum < threshold) {
+                    document.getElementById("demo").innerHTML = "No";  
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "There was an error";  
+                }
+            }
+        </script>
+    </head>
+<body>
+<h1>JavaScript Perceptron</h1>
+
+<p>Will I choose this flavor of Ice Cream?</p>
+<hr>
+<p>Questions</p>
+<div class="question">
+    1. Is it vanilla?
+    <div class="options">
+        <label><input type="radio" name="vanilla" value="1"> Yes</label>
+        <label><input type="radio" name="vanilla" value="0"> No</label>
+    </div>
+</div>
+<div class="question">
+    2. Is it chocolate?
+    <div class="options">
+        <label><input type="radio" name="chocolate" value="1"> Yes</label>
+        <label><input type="radio" name="chocolate" value="0"> No</label>
+    </div>
+</div>
+<div class="question">
+    3. Is it cookies n cream?
+    <div class="options">
+        <label><input type="radio" name="CookiesNCream" value="1"> Yes</label>
+        <label><input type="radio" name="CookiesNCream" value="0"> No</label>
+    </div>
+</div>
+<div class="question">
+    4. Does it have toppings?
+    <div class="options">
+        <label><input type="radio" name="Flavour" value="1"> Yes</label>
+        <label><input type="radio" name="Flavour" value="0"> No</label>
+    </div>
+</div>
+<div class="question">
+    5. Does it have peanuts as toppings?
+    <div class="options">
+        <label><input type="radio" name="Peanuts" value="1"> Yes</label>
+        <label><input type="radio" name="Peanuts" value="0"> No</label>
+    </div>
+</div>
+
+<button id="Submit" onclick="IceCream()">Check</button>
+
+<div id="demo"></div>
+
+</body>
+</html>
