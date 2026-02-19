@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/mapStyle.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <style>   body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 1rem 1rem; /* Top padding makes room for the fixed header */
+  box-sizing: border-box;
+  background-color: rgb(230, 193, 147);
+}
+
+
+    canvas {
+      border: 1px solid black;
+      background: #f0f0f0;
+      margin-top: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    select, button {
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+  width: 100%;
+  background-color: rgb(120, 19, 19);
+  color: rgb(240, 216, 187);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(150, 30, 30);
+}
+
+
+    #menu {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+#Title {
+  font-size: 1.2rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+
+    #sidebar {
+      margin-top: 10px;
+      align-self: flex-start;
+      font-size: 24px;
+    }</style>
+</head>
+<body>
+  <ul id="menu" class="close">
+    <p id="Title">BISCAST Astean Finder</p>
+    <a href="../index.html">Home</a>
+    <a href="../html/map.html">Map</a>
+    <a href="../html/tracker.html">Map PathFinder</a>
+  </ul>
+  
+  <button id="sidebar">&#9776;</button>
+  <h2>Select Start and End Entrances</h2>
+  <div style="margin-left: 20px;">
+  <h3>Legend</h3>
+  <ul style="list-style: none; padding: 0;">
+    <li><span style="display:inline-block;width:20px;height:20px;background-color:gray;margin-right:8px;"></span>Road</li>
+    <li><span style="display:inline-block;width:20px;height:20px;background-color:green;margin-right:8px;"></span>Grass/Trees</li>
+    <li><span style="display:inline-block;width:20px;height:20px;background-color:brown;margin-right:8px;"></span>Buildings</li>
+    <li><span style="display:inline-block;width:20px;height:20px;background-color:#90EE90;margin-right:8px;"></span>Buildings</li>
+    <li><span style="display:inline-block;width:20px;height:20px;background-color:#C48A47;margin-right:8px;"></span>Connected Buildings</li>
+  </ul>
+</div>
+
+  <div id="tooltip" style="position: absolute; display: none; background: white; border: 1px solid black; padding: 2px 6px; font-size: 14px; pointer-events: none;"></div>
+
+  <div id="controls">
+    <label for="startSelect">Start:</label>
+    <select id="startSelect"></select>
+
+    <label for="endSelect">End:</label>
+    <select id="endSelect"></select>
+
+    <button id="goBtn">Search</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <canvas id="canvas" width="400" height="620"></canvas>
+
+  <script src="../js/tracker.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

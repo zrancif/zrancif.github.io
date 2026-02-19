@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astean Finder</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <ul id="menu">
+        <p id="Title">Biscast Astean Finder</p>
+        <a href="index.html">Home</a>
+        <a href="html/map.html">Map</a>
+        <a href="html/tracker.html">Map PathFinder</a>
+    </ul>
+        <button id="sidebar">&#9776;</button>
+
+    <h3>Where do you want to go?</h3>
+    <input type="text" id="search" list="labels" autocomplete="off" required>
+    <datalist id="labels"></datalist>
+    <button onclick="saveQuery()" id="searchButton">Search</button>
+
+    
+    <script src="js/menu.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

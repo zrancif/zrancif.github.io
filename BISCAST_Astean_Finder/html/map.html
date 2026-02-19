@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Prototype</title>
+    <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+
+    <ul id="menu" class="close">
+        <p id="Title">BISCAST Astean Finder</p>
+        <a href="../index.html">Home</a>
+        <a href="../html/map.html">Map</a>
+        <a href="../html/tracker.html">Map PathFinder</a>
+    </ul>
+        <button id="sidebar">&#9776;</button>
+
+    <div id="searchbar">
+        <input type="text" id="search" list="labels" autocomplete="off" required>
+        <datalist id="labels"></datalist>
+        <button onclick="saveQuery()" id="searchButton">Search</button>
+    </div>
+
+
+    <div id="map" style="margin: 15px; position: relative;">
+        <canvas id="mapCanvas"></canvas>
+        <div id="markers"></div>
+        <img src="../media/SchoolMap.jpg" id="mapImage">
+    </div>
+
+    <div id="popUp">
+        <div>
+            <h2 id="bldgName">Name</h2>
+            <button onclick="closePopUp()">X</button>
+        </div>
+        <img src="../media/buildings/default.png" id="bldgImg">
+        <br><br>
+        <div id="Details"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="../js/map.js"></script>
+    <script src="../js/menu.js"></script>
+
+    <!-- X Y position tracker, check inspect mobile view -->
+    <script src="../js/xyloc.js"></script>
+</body>
+</html>

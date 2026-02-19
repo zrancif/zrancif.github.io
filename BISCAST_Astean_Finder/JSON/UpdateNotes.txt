@@ -1,0 +1,12 @@
+1. Add Labels  ->  JSON File
+
+    name:   [Name of Building]
+    x,y :   [x y position] - instructions: inspect to mobile + click -> see devTools console for x y positions
+    label:  [Shown clickable icons]
+    image:  [path to image: buildings / gate / misc(ex students plaza)]
+    type: gate [available to use SCHEDULES]
+          bldg [number of FLOORS, ROOMS per FLOOR bottom-top [ARRAY TYPE]]
+
+2. Update Map -> 
+    map.html [id="bldgImg"]
+    img PATH: 'media' folder
